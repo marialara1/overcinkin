@@ -8,6 +8,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button class="info-button" type="button" aria-label="Open information">
+    + INFO
+</button>
+
+<div class="info-popup" aria-hidden="true">
+    <div class="info-popup-inner">
+        <button class="info-close" type="button" aria-label="Close information">
+            ×
+        </button>
+
+        <div class="info-popup-content">
+            <p>
+                All designs are available to be tattooed more than once unless stated otherwise.
+                If you’d like to make any changes to a design, no problem! Just let me know when booking.
+                If you’d like a design to be exclusive to you, just let me know when booking. Exclusivity comes with an additional percentage added to the final tattoo price.
+
+                All tattoos are done by handpoke, without a tattoo machine.
+
+                If you’d like to book one of the available designs, send me a message @overcinkin with the design you’re interested in and we’ll arrange the details.
+                <br>
+                ✮⋆˙
+                <br>
+                Todos los diseños de esta web no son exclusivos. Si quieres que alguno sea solo para ti, dímelo cuando me escribas para reservar y se añadirá un porcentaje extra al precio final del tatuaje.
+                Si quieres hacer alguna modificación en un diseño, no hay problema, coméntamelo en el momento de hacer la reserva para hacer los cambios.
+                Todos los tatuajes los hago con handpoke, sin máquina de tatuar.
+
+                Para reservar un diseño, escríbeme por mensaje a @overcinkin y dime cuál te gustaría tatuarte.
+
+            </p>
+        </div>
+    </div>
+</div>
     <main>
         <ul class="gallery">
             <li><img src="img/IMG_4000Ilustración_sin_título 1.png" alt=""></li>
@@ -74,6 +106,21 @@ window.addEventListener('scroll', () => {
     setTimeout(() => {
         star.remove();
     }, 900);
+});
+
+
+const infoButton = document.querySelector('.info-button');
+const infoPopup = document.querySelector('.info-popup');
+const infoClose = document.querySelector('.info-close');
+
+infoButton.addEventListener('click', () => {
+    infoPopup.classList.add('is-open');
+    infoPopup.setAttribute('aria-hidden', 'false');
+});
+
+infoClose.addEventListener('click', () => {
+    infoPopup.classList.remove('is-open');
+    infoPopup.setAttribute('aria-hidden', 'true');
 });
 </script>
 </body>
